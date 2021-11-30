@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="icon" href="https://img.icons8.com/nolan/64/computer.png">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <title>Curso Redes de Computadoras</title>
+    <style>
+        :root {
+            --font-title: 'Poppins', sans-serif;
+            --font-text: 'Baloo 2', cursive;
+            --color-main: #1c7d8d;
+            --color-secondary: #EAEAEA;
+            --color-text-main: #616161;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        header {
+            width: 100%;
+            background-color: var(--color-secondary);
+            font-family: var(--font-text);
+            font-size: 1.5rem;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+        header .logo img{
+            height: 75px;
+        }
+        header nav {
+            width: 70%;
+        }
+        header .browser {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 25px;
+        }
+        header .browser a {
+            text-decoration: none;
+            padding: 5px;
+            color: black;
+        }
+        header .browser a:hover {
+            text-decoration: underline;
+            padding: 5px;
+            color: var(--color-main);
+        }
+        header .browser__sign-in {
+            background-image: url('https://img.icons8.com/external-bearicons-detailed-outline-bearicons/64/000000/external-login-call-to-action-bearicons-detailed-outline-bearicons-1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 25px;
+            width: 25px;
+            margin-left: 35px;
+            cursor: pointer;
+        }
+
+        main .principal {
+            background-color: var(--color-secondary);
+            height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        main .prinipal__information {
+            width: 40%;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 0 40px 0 80px;
+        }
+        main .prinipal__information h1 {
+            font-family: var(--font-title);
+            font-size: 6rem;
+            color: black;
+        }
+        main .prinipal__information p {
+            font-family: var(--font-text);
+            font-size: 1.6rem;
+        }
+        main .prinipal__information div {
+            height: 3px;
+            width: 80px;
+            background-color: var(--color-text-main);
+        }
+        main .prinipal__information button {
+            border: 2px solid var(--color-text-main);
+            font-family: var(--font-text);
+            font-size: 1.8rem;
+            color: var(--color-text-main);
+            padding: 5px 30px;
+            margin: 0 auto;
+        }
+        main .prinipal__information button:hover {
+            border: 2px solid var(--color-main);
+            background-color: var(--color-main);
+            color: var(--color-secondary);
+        }
+        main .principal__image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 80px;
+        }
+        main .principal__image img{
+            width: 350px;
+        }
+
+        main .course {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+        }
+        main .course h2 {
+            font-family: var(--font-title);
+            font-size: 5rem;
+            color: black;
+        }
+        main .course .course__topics {
+            width: 100%;
+            margin: 80px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        main .course .course__topics div {
+            margin: auto;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        main .course .course__topics div img {
+            width: 280px;
+            border-radius: 20px;
+        }
+        main .course .course__topics div a {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            margin: 15px 10px;
+        }
+        main .course .course__topics div a:hover {
+            text-decoration: underline;
+            color: var(--color-main);
+        }
+        main .course button {
+            border: 2px solid var(--color-text-main);
+            font-family: var(--font-text);
+            font-size: 1.8rem;
+            color: var(--color-text-main);
+            padding: 5px 50px;
+            margin: 0 auto;
+        }
+        main .course button:hover {
+            border: 2px solid var(--color-main);
+            background-color: var(--color-main);
+            color: var(--color-secondary);
+        }
+
+        main .teacher {
+            background-color: var(--color-main);
+            text-align: center;
+            padding: 50px;
+        }
+        main .teacher h2 {
+            font-family: var(--font-title);
+            font-size: 5rem;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+        }
+        main .teacher div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        main .teacher div img {
+            width: 300px;
+            border-radius: 50%;
+            margin: 30px;
+        }
+        main .teacher .teacher__information {
+            width: 50%;
+            flex-direction: column;
+        }
+        main .teacher__information h3 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--color-secondary);
+            margin: 5px;
+        }
+        main .teacher__information p, .teacher__information em {
+            font-family: var(--font-text);
+            font-size: 1.6rem;
+            color: var(--color-secondary);
+            margin: 15px;
+        }
+
+        main .students {
+            background-image: url('https://www.empanacombi.com/wp-content/uploads/2019/06/paper_bg.jpg');
+            padding: 50px;
+        }
+        main .students h2 {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 5rem;
+            margin-bottom: 50px;
+
+        }
+        main .students__opinions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        main .students__opinions-container {
+            background-color: white;
+            border: 2px solid var(--color-text-main);
+            border-radius: 50px;
+            width: 550px;
+            display: flex;
+            align-items: center;
+            margin: 30px;
+            padding: 10px;
+        }
+        main .students__opinions img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-right: auto;
+        }
+        main .students__opinions .students__opinions--information {
+            width: 400px;
+            /* background-color: white;
+            border: 2px solid var(--color-text-main);
+            border-radius: 40px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 10px;
+            margin-left: auto;
+            font-family: var(--font-text);
+            font-size: 1.6rem;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #f2edea;
+            bottom: 0;
+            border-top: 1px solid #c1c1c1;
+        }
+        footer .contacts{
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+            margin-left: 20px;
+        }
+        footer li{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+            padding: 5px;
+            margin-right: 20px;
+        }
+        footer .facebook{
+            background-image: url('https://img.icons8.com/ios-filled/50/000000/facebook-f.png');
+        }
+        footer .instagram{
+            background-image: url('https://img.icons8.com/ios/50/000000/instagram-new--v1.png');
+        }
+        footer .whatsapp{
+            background-image: url('https://img.icons8.com/ios/50/000000/whatsapp--v4.png');
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://scontent.flim16-2.fna.fbcdn.net/v/t1.15752-9/262515227_321929092830693_8052790784476447106_n.png?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEucZm7J5Zt3_oC1YZDFrdLuQl5mdrX8PK5CXmZ2tfw8i6gWMPZ1kVMAJ39yRY-vmsX2ftyNGtYkCP4PtcQA-GC&_nc_ohc=tOIBrp9o8tgAX8wpJ08&tn=JiXxyXZVyw6IEtO8&_nc_ht=scontent.flim16-2.fna&oh=3e67e637640ad65dfc9007f0023b1f14&oe=61CC2964" alt="Logo UNSCH">
+        </div>
+        <nav>
+            <ul class="browser">
+                <li><a href="#">Principal</a></li>
+                <li><a href="#">Contenido</a></li>
+                <li><a href="#">Docente</a></li>
+                <li><a href="#">Alumnos</a></li>
+                <li><a href="#">Contáctanos</a></li>
+                <li class="browser__sign-in"><a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="principal">
+            <div class="prinipal__information">
+                <h1>Redes de Computadoras</h1>
+                <p>Conoce cómo funcionan las redes informáticas que componen todo Internet, sus diferentes dispositivos y modelos. Entiende las diferentes capas que interactúan para poder transmitir la información y distribuirla alrededor del mundo.</p>
+                <div></div>
+                <button>SUSCRIBIRSE</button>
+            </div>
+            <div class="principal__image">
+                <img src="https://scontent.flim16-2.fna.fbcdn.net/v/t1.15752-9/260652512_659651525196647_1325078042084744285_n.png?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHtgQ0N9k9RY71DJkdNO7i4dP2TXD6YhTl0_ZNcPpiFOXDCpD0rTSf3w3-NBVG-EIQXIP8aNx8zhiJJdioXp6aZ&_nc_ohc=v4PO2fKPVT8AX_JGFsC&_nc_ht=scontent.flim16-2.fna&oh=793667ca449c053e23e3b1ea48501485&oe=61CAB3C8" alt="">
+            </div>
+        </section>
+        <section class="course">
+            <h2>Aprende a ...</h2>
+            <div class="course__topics">
+                <div>
+                    <img src="https://scontent.flim16-3.fna.fbcdn.net/v/t1.15752-9/262572544_284295050320510_5177107391747238609_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHxESKHfu_lKrWn_TX8iKTclPDbcTPvykWU8NtxM-_KRSIP3NFjltlcWIae0yekTRuzhyDR0BR58q8Sj--i0K1Z&_nc_ohc=iKjCOxRHlccAX-W1a0U&_nc_ht=scontent.flim16-3.fna&oh=e80444cca4f5a373ebf0c4866cd60e00&oe=61CC5056" alt="">
+                    <a href="#">Estructurar la arquitectura de una red</a>
+                </div>
+                <div>
+                    <img src="https://scontent.flim16-1.fna.fbcdn.net/v/t1.15752-9/262562308_424999352435172_3377357853383185789_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEcXwpoJrZho9wruUmxXc-R4QrHQdTPqWnhCsdB1M-paZ9Kw2DZGmCnXFYtBz2lrhWCJCS19cnXYPnQK6zxxoaW&_nc_ohc=Uu9tWqmYBP4AX_RgBlr&_nc_ht=scontent.flim16-1.fna&oh=bb0ca91c4e19a2be13eb31119cf4c96a&oe=61CD1CEB" alt="">
+                    <a href="#">Determinar la funcionalidad de los dispositivos de red</a>
+                </div>
+                <div>
+                    <img src="https://scontent.flim16-2.fna.fbcdn.net/v/t1.15752-9/262782553_886742168648482_7814131373330627516_n.png?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEzpyTfVgxnZ_ihwkBvJWMGE6VdbHZbJ4ATpV1sdlsngIW7CgIxU9yiitmCOnuUujbU3anrHlkV80urTk5vpXZe&_nc_ohc=lKsxhOhZ54kAX9eYYRx&_nc_ht=scontent.flim16-2.fna&oh=840c4b89859e35a40ca1949ebba78897&oe=61CBC0EB" alt="">
+                    <a href="#">Comprender las capas de un modelo de red</a>
+                </div>
+                <div>
+                    <img src="https://scontent.flim16-3.fna.fbcdn.net/v/t1.15752-9/262478893_658695552071636_249811613798165347_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFHe0HWXzgHMQNfVTDAXRTqPp-1WdvlUrU-n7VZ2-VSte4HqulTmVdo2CBgv9kCkm5FVdhW7d_gKVXpQy6UHIKi&_nc_ohc=BblYWhjZqdoAX-i8pcf&_nc_ht=scontent.flim16-3.fna&oh=398a2707f2b42c348f0f88d457865a39&oe=61CADBBE" alt="">
+                    <a href="#">Conocer las diferencias entre los modelos de redes</a>
+                </div>
+            </div>
+            <button>Leer más</button>
+        </section>
+        <section class="teacher">
+            <h2>Conoce a nuestro docente</h2>
+            <div>
+                <img src="https://scontent.flim16-3.fna.fbcdn.net/v/t1.15752-9/262562311_315388006891290_8997810582375935852_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeF4-XSavF0Ihd7Ss3wf8rAK2WfcBVMlsdzZZ9wFUyWx3DMv1vmnRUz9_qKd2_7VIsIRvkSuPsX9OMGpu_LNuaNL&_nc_ohc=bBwvL-nmMRAAX-dnbVr&tn=JiXxyXZVyw6IEtO8&_nc_ht=scontent.flim16-3.fna&oh=443bd1ded6e1f13895730ff41bed5b1f&oe=61CB7008" alt="Karel P. S.">
+                <div class="teacher__information">
+                    <h3>Karel Peralta Sotomayor</h3>
+                    <em>Docente de la UNSCH</em>
+                    <p>Freddy llevó a Platzi a ser la primera empresa de la región que entró a Y Combinator (2015), una de las aceleradoras de startups en etapa temprana de Silicon Valley. Hoy en día se mantiene como CEO de Platzi y es uno de los latinos más influyentes en el mundo de la tecnología y emprendimiento en Latinoamérica.</p>
+                </div>
+            </div>
+        </section>
+        <section class="students">
+            <h2>Nuestros estudiantes opinan ...</h2>
+            <div class="students__opinions">
+                <div class="students__opinions-container">
+                    <img src="https://scontent.flim16-2.fna.fbcdn.net/v/t1.15752-9/262609776_1018470525370425_2435873923040315029_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEwRhVfC0zCeovKuQq_9dRaHJxoEqFuVpkcnGgSoW5WmRYivr5NW7u8pMjfn78kmcg5Lt2JPLmMtKQdXK_Nulup&_nc_ohc=NMcfZqcq24gAX_uu1Yd&_nc_ht=scontent.flim16-2.fna&oh=45512c7938d76f66360b301e3032f190&oe=61CC84F5" alt="">
+                    <div class="students__opinions--information">
+                        <h3><b>Nelly Curo</b></h3>
+                        <p><i>El profesor estuvo impecable, señala las buenas y malas prácticas. Clases fáciles de seguir y con buen contenido, totalmente recomendado.</i></p>
+                    </div>
+                </div>
+                <div class="students__opinions-container">
+                    <img src="https://scontent.flim16-3.fna.fbcdn.net/v/t1.15752-9/262265463_595990081617035_3134650915138916067_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeGGb4C7DiuAhP2gANEmAQeS09xkdSjHdOvT3GR1KMd060DWUX1eWSqfiQdmICam8svn0CzT2N7VdyLUX1Ks-zRV&_nc_ohc=qAGlAlowlj8AX9yJMC4&_nc_ht=scontent.flim16-3.fna&oh=e2d978c78467079080280ecd46d9408a&oe=61CB74DD" alt="">
+                    <div class="students__opinions--information">
+                        <h3><b>Rafael García</b></h3>
+                        <p><i>Lo mejor de este curso fue que como programador desde el primer dia pude poner a prueba lo aprendido.</i></p>
+                    </div>
+                </div>
+                <div class="students__opinions-container"> 
+                    <img src="https://scontent.flim16-1.fna.fbcdn.net/v/t1.15752-9/262264014_589468408792208_125965251587724908_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeE37agfbGVvgcABIghlMiZkkuLf2S5tCgiS4t_ZLm0KCLElZiR6atE85gI6f_ccWzJ7Pdg8nCBWdzdQb4dDCv6E&_nc_ohc=it_T2rhExEAAX8OPlAY&_nc_ht=scontent.flim16-1.fna&oh=7846a1f03558d8897f2457dcb1f34056&oe=61CCE6A9" alt="">
+                    <div class="students__opinions--information">
+                        <h3><b>Christian Sotelo</b></h3>
+                        <p><i>El profesor estuvo impecable, señala las buenas y malas prácticas. Clases fáciles de seguir y con buen contenido, totalmente recomendado.</i></p>
+                    </div>
+                </div>
+                <div class="students__opinions-container">
+                    <img src="https://scontent.flim16-3.fna.fbcdn.net/v/t1.15752-9/262790036_1054151262053050_3257068192557748256_n.png?_nc_cat=101&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeGoW76EfMVxGPK1Wb3VZV9rlsWA86VDhU6WxYDzpUOFTioRDAJ0cD5pr6HPLB9G8FZaK6Ed-pfcq9n_kJk3f6sf&_nc_ohc=uIN5aGOqcZgAX85um8v&_nc_ht=scontent.flim16-3.fna&oh=8c6a1ec939f83e91462dc40d5f7290c2&oe=61CD8CCE" alt="">
+                    <div class="students__opinions--information">
+                        <h3><b>Emma Velarde</b></h3>
+                        <p><i>Excelente, muy clara y entendible la información, ahora a ponerlo en práctica.</i></p>
+                    </div>
+                </div>
+                <div class="students__opinions-container">
+                    <img src="https://scontent.flim16-2.fna.fbcdn.net/v/t1.15752-9/cp0/262900023_504250730630521_3473658969255931834_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFFPoOF0VDeVCSRSyJA9uWG4enxqLi6Lx_h6fGouLovH-dV9M1obq_kyQpbJHFfm2iGri7B5lRO7MbsHD5BN31C&_nc_ohc=jmpz8mg04-UAX8Bx3iB&_nc_ht=scontent.flim16-2.fna&oh=e75881588e7b96dc0d51511eb1e23c83&oe=61CAE568" alt="">
+                    <div class="students__opinions--information">
+                        <h3><b>Cristihan Yanqui</b></h3>
+                        <p><i>Muy buen curso , ayuda a refrescar los conocimientos de como esta implementado los servicos de red y como se estrutura la internet.</i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="contacts">
+            <li class="instagram"><a href="#"></a></li>
+            <li class="facebook"><a href="#"></a></li>
+            <li class="whatsapp"><a href="#"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
